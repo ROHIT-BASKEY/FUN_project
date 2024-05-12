@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="main section">
+        <h1 class="gradient">Love Percentage</h1>
+        <div class="rules">
+            <p style="color: aliceblue;font-weight: 400;">How It Works:</p>
+            <p id="text">
+                <span id="num">1.</span> Combining Names with "LOVE": First, the code takes two names provided by the user. It puts these names together with the word "LOVE" in between. For example, if the names are "John" and "Jane", it would create "JOHNLOVEJANE".<br><br>
+                <span id="moreText" style="display: none;">
+                    <span id="num">2.</span> Letters: The code then goes through each letter in "JOHNLOVEJANE" and counts how many times each letter appears. For instance, J appears twice, O once, H once, N twice, L once, V once, and E twice.<br><br>
+                    <span id="num">3.</span> Saving Unique Letters: As it counts, the code also makes sure each letter is only counted once. It does this by storing each letter it has counted in a special list. If it comes across a letter that's already in this list, it skips counting it again.<br><br>
+                    <span id="num">4.</span> Calculating with Numbers: With the counts of each letter (like 2 for J, 1 for O), the code then performs a series of calculations:<br>
+                    It starts by looking at the numbers from both ends towards the middle, adding them together, and keeping only the last digit of their sum. For example, if one end has 2 and the other end has 2, it adds them to get 4. If the sum is two digits (like 10), it only keeps the last digit (0).<br><br>
+                    <span id="num">5.</span> Final Percentage: The last two numbers are then put together to form a percentage. If those numbers are, say, 3 and 5, the final "love percentage" would be 35%.<br><br>
+                    <span id="num">6.</span> Displaying the Result: This percentage is then shown to the user, typically on a webpage where the names were entered.
+                </span>
+                <button onclick="toggleText()" id="toggleButton">Show More</button>
+            </p>
+        </div>
+        <div class="container">
+            <h1>Love Calculator</h1>
+            <label for="name1">Your Name:</label>
+            <input type="text" id="name1">
+            <label for="name2">Your Partner's Name:</label>
+            <input type="text" id="name2">
+            <button onclick="calculate()">Calculate Love Percentage</button>
+            <div class="percent">
+                <h1>Love Success Percentage:</h1>
+                <div class="result" id="result"></div>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
